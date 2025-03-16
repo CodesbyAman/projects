@@ -36,8 +36,6 @@ class todolist:
         except FileNotFoundError:
             print(f"{fileName} is not found")
         
-                   
-
 t1=todolist()
 while True:
      print("Select the following tasks...😎")
@@ -48,25 +46,26 @@ while True:
      print("5.load Your Tasks in List!!")
      print("6. Exit")
      n=int(input())
-     match n:
-         case 1:
-            t1.add_task(input("Enter your task only tasks"))
+     match n:     
+          case 1:
+            t1.add_task(input("Enter your task\n"))
             print("your tasks is added successfuly in list of tasks👍")
-         case 2:
+          case 2:
             t1.view_task()
             print("Your task is view🧐")
-         case 3:
-            t1.delete_task()  
-         case 4:
+          case 3:
+            taskName = input("Enter the task name to delete: ")
+            t1.delete_task(taskName)  
+          case 4:
             t1.save_task('listOfTasks.txt')
             print("tasks is save successfully in your file👊")
-         case 5:
+          case 5:
             t1.load_task('listOfTasks.txt')
             print("task is loaded in list😎")
-         case 6:
+          case 6:
              print("You exit from todolist 🙏")   
              break
-         case _:
+          case _:
             print("invalid choice please select valid option🙂")              
 
     
